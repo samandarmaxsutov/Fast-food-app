@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".feature1.ui.screens.home.HomeScreen">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:text="@string/app_name"
+        android:textSize="24sp"
+        android:gravity="center|start"
+        android:paddingHorizontal="16dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="#304FFE"
+        android:id="@+id/tab_name"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tab_name"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:id="@+id/list_item"
+        tools:listitem="@layout/item_foods"
+        android:orientation="vertical"
+        />
+
+    <ImageView
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/star"
+        android:clickable="true"
+        android:background="?selectableItemBackgroundBorderless"
+        app:layout_constraintTop_toTopOf="@id/tab_name"
+        app:layout_constraintBottom_toBottomOf="@id/tab_name"
+        android:layout_margin="8dp"
+        android:id="@+id/star_food"
+        app:tint="#FF6D00" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

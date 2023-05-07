@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="uz.it_school.fast_food_app.feature1.ui.screens.splash.SplashScreen"
+        android:label="SplashScreen" >
+        <action
+            android:id="@+id/action_splashScreen_to_homeScreen"
+            app:destination="@id/homeScreen"
+            app:popUpTo="@id/nav_graph.xml" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeScreen"
+        android:name="uz.it_school.fast_food_app.feature1.ui.screens.home.HomeScreen"
+        android:label="fragment_home_screen"
+        tools:layout="@layout/fragment_home_screen" >
+        <action
+            android:id="@+id/action_homeScreen_to_foodScreen"
+            app:destination="@id/foodScreen" />
+        <action
+            android:id="@+id/action_homeScreen_to_buyFoodsScreen"
+            app:destination="@id/buyFoodsScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodScreen"
+        android:name="uz.it_school.fast_food_app.feature1.ui.screens.food.FoodScreen"
+        android:label="fragment_food_screen"
+        tools:layout="@layout/fragment_food_screen" >
+        <argument
+            android:name="food"
+            app:argType="uz.it_school.fast_food_app.feature1.model.room.enitiies.FoodData" />
+    </fragment>
+    <fragment
+        android:id="@+id/buyFoodsScreen"
+        android:name="uz.it_school.fast_food_app.feature1.ui.screens.buy.BuyFoodsScreen"
+        android:label="fragment_buy_foods_screen"
+        tools:layout="@layout/fragment_buy_foods_screen" >
+        <action
+            android:id="@+id/action_buyFoodsScreen_to_foodScreen"
+            app:destination="@id/foodScreen" />
+    </fragment>
+</navigation>
